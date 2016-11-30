@@ -13,10 +13,14 @@ hbs.registerHelper('getCurrentYear', () => {
 	return new Date().getFullYear();
 });
 
+hbs.registerHelper('capIt', (sometext) => {
+	return sometext.toUpperCase();
+});
 
 app.get('/', (req, res) => {
 	res.render('home', {
-		pageTitle: 'This is the Home Page!'		
+		pageTitle: 'This is the Home Page!',
+		pageMessage: 'This is a message uppercased via the "capIt" hbs helper'		
 	});
 });
 
